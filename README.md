@@ -1,2 +1,2 @@
 ## demo
-fm-dialog demo
+fm-dialog demo.
