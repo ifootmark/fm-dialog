@@ -1,2 +1,2 @@
 # fm-dialog
-fm-dialog
+fm-dialog.
