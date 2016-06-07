@@ -1,4 +1,4 @@
 'use strict';
 
-var dlg = require('./lib/idialog');
+var dlg = require('./lib/fm-dialog');
 module.exports = dlg;

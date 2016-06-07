@@ -22,12 +22,12 @@ var G_PATH={
   basePath:'./',
   srcPath:'lib/',
   cssPath:'css/',
-  distPath:'./dist'
+  distPath:'dist'
 };
 
 //browserify
 gulp.task('browserify', function(cb) {
-  glob('./lib/test.js', {nodir: true}, function(err, files) {
+  glob(G_PATH.srcPath+'test.js', {nodir: true}, function(err, files) {
     var b = browserify();
     files.forEach(function(file) {
       b.add(file);
@@ -44,23 +44,18 @@ gulp.task('browserify', function(cb) {
 
 //minifycss
 gulp.task('minifycss', function() {
-    return gulp.src(G_PATH.cssPath+'*.css')//source
-        .pipe(minifycss())//uglify
-        .pipe(rename({suffix: '.min'}))//rename
-        .pipe(gulp.dest(G_PATH.cssPath));//output
+    return gulp.src(G_PATH.cssPath+'fm-dialog.css')
+        .pipe(minifycss())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest(G_PATH.distPath));
 });
 
 //minifyjs
 gulp.task('minifyjs', function() {
-    return gulp.src(G_PATH.srcPath+'idialog.js')
-        .pipe(uglify())//uglify
-        .pipe(rename({suffix: '.min'}))//rename
-        .pipe(gulp.dest(G_PATH.distPath));//output
-});
-
-gulp.task('jquery', function() {
-    return gulp.src(G_PATH.srcPath+'jquery-2.2.0.min.js')
+    return gulp.src(G_PATH.srcPath+'fm-dialog.js')
+        .pipe(uglify())
+        .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(G_PATH.distPath));
 });
 
-gulp.task('default',['browserify','minifycss','minifyjs','jquery']);
+gulp.task('default',['browserify','minifycss','minifyjs']);
