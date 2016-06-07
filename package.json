@@ -1,6 +1,6 @@
 {
   "name": "fm-dialog",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "fm-dialog component",
   "main": "index.js",
   "scripts": {
