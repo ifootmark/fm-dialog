@@ -76,7 +76,7 @@ gulp.task('browserify', function(cb) {
 
 //minifycss
 gulp.task('minifycss', function() {
-    return gulp.src(G_PATH.cssPath+'fm-dialog.css')
+    return gulp.src(G_PATH.cssPath+'*.css')
         .pipe(minifycss())
         .pipe(rename({suffix: '.min'}))
         .pipe(buildHeader())
