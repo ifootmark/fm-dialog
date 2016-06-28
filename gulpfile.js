@@ -16,7 +16,9 @@ var gulp = require('gulp'),
     buffer = require('vinyl-buffer'),
     rename = require('gulp-rename'),
     minifycss = require('gulp-minify-css'),
-    uglify = require('gulp-uglify');
+    uglify = require('gulp-uglify'),
+    runSequence = require('run-sequence'),
+    header = require('gulp-header');
 
 var G_PATH={
   basePath:'./',
@@ -24,6 +26,35 @@ var G_PATH={
   cssPath:'css/',
   distPath:'dist'
 };
+
+function buildHeader () {
+  var pkg = require('./package.json');
+  var banner = ['/**',
+    ' * @providesModule <%= pkg.name %> - <%= pkg.description %>',
+    ' * @author <%= pkg.author %>',
+    ' * @version v<%= pkg.version %>',
+    ' * @link <%= pkg.homepage %>',
+    ' * @license <%= pkg.license %>',
+    ' * @time '+ getTime(),
+    ' */',
+    ''
+  ].join('\n');
+  return header(banner, { pkg: pkg });
+}
+function getTime(){
+  var date=new Date();
+  var year=date.getFullYear();
+  var month=date.getMonth()+1;
+  var d=date.getDate();
+  var h=date.getHours();
+  var m=date.getMinutes();
+  var s=date.getSeconds();
+  h=h<10?'0'+h:h;
+  m=m<10?'0'+m:m;
+  s=s<10?'0'+s:s;
+  var time=year+'-'+month+'-'+d+' '+h+':'+m+':'+s;
+  return time;
+}
 
 //browserify
 gulp.task('browserify', function(cb) {
@@ -37,6 +68,7 @@ gulp.task('browserify', function(cb) {
       .pipe(buffer())
       .pipe(uglify())
       .pipe(rename({suffix: '.min'}))
+      .pipe(buildHeader())
       .pipe(gulp.dest(G_PATH.distPath));
     cb();
   });
@@ -47,6 +79,7 @@ gulp.task('minifycss', function() {
     return gulp.src(G_PATH.cssPath+'fm-dialog.css')
         .pipe(minifycss())
         .pipe(rename({suffix: '.min'}))
+        .pipe(buildHeader())
         .pipe(gulp.dest(G_PATH.distPath));
 });
 
@@ -55,7 +88,12 @@ gulp.task('minifyjs', function() {
     return gulp.src(G_PATH.srcPath+'fm-dialog.js')
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
+        .pipe(buildHeader())
         .pipe(gulp.dest(G_PATH.distPath));
 });
 
-gulp.task('default',['browserify','minifycss','minifyjs']);
+gulp.task('deploy', function() {
+  runSequence('browserify','minifycss','minifyjs');
+});
+
+gulp.task('default',['deploy']);
