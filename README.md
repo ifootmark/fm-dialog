@@ -13,7 +13,7 @@
 ## 使用方法
 
 html 中添加引用
-`<link rel="stylesheet" href="../dist/fm-dialog.min.css">`
+`<link rel="stylesheet" href="./dist/fm-dialog.min.css">`
 
 * [commonjs](#commonjs)
 * [global](#global)
