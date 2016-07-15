@@ -21,7 +21,7 @@ html 中添加引用
 
 ### CommonJS
 ```javascript
-var Dlg = require('./fm-dialog');;
+var Dlg = require('./fm-dialog');
 Dlg.show(id, content, options, callback);
 ```
 
