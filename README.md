@@ -1,5 +1,7 @@
 # fm-dialog
 
+[![NPM version][npm-image]][npm-url]
+
 ## 安装
 
 执行命令
@@ -31,7 +33,7 @@ Dlg.show(id, content, options, callback);
 
 ### API
 
-**Dlg.show(id, content, options, callback)**
+#### Dlg.show(id, content, options, callback)
 
 `id` 默认“ishow”
 
@@ -72,12 +74,12 @@ function () {
 ```
 
 
-#### 快速调用
+### 快速调用
 
 若想快速调用，可以用以下 api ，它们的默认 id 均为 "i"+对应的 api 名称。
 
-*确认对话框*
-**Dlg.confirm(content, ok)**
+确认对话框
+#### Dlg.confirm(content, ok)
 
 `content` 确认对话框内容
 
@@ -91,8 +93,8 @@ Dlg.confirm('点我干什么，要请我吃饭吗？', function () {
 ```
 
 
-*消息提示框*
-**Dlg.msg(msg, type)**
+消息提示框
+#### Dlg.msg(msg, type)
 
 `msg` 消息内容
 
@@ -104,8 +106,8 @@ Dlg.msg('亲爱的朋友，您好！3 秒后自动消失，请稍等', 'success'
 ```
 
 
-*消息提示框(mask)*
-**Dlg.msglock(msg, type)**
+消息提示框(mask)
+#### Dlg.msglock(msg, type)
 
 `msg` 消息内容
 
@@ -117,8 +119,8 @@ Dlg.msglock('亲爱的朋友，您好！点击其他空白处我会消失，点�
 ```
 
 
-*加载提示*
-**Dlg.loading(tips)**
+加载提示
+#### Dlg.loading(tips)
 
 `tips` 加载提示内容
 
@@ -131,8 +133,8 @@ setTimeout(function(){
 ```
 
 
-*关闭指定对象*
-**Dlg.close(id)**
+关闭指定对象
+#### Dlg.close(id)
 
 `id` 要关闭的对象 id
 
