@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = require('./lib/fm-dialog');
+module.exports = require('./src/fm-dialog');
