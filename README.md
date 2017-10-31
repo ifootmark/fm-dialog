@@ -199,13 +199,10 @@ Dlg.config({
 });
 ```
 
-
 ##  Demo
-demo: [http://ifootmark.github.io/fm-dialog/demo.html](http://ifootmark.github.io/fm-dialog/demo.html)
-
+<a href="http://ifootmark.github.io/fm-dialog/demo.html" target="_blank">http://ifootmark.github.io/fm-dialog/demo.html</a>
 
 ## License
 [MIT](http://spdx.org/licenses/MIT)
-
 
 © allmeet.net
