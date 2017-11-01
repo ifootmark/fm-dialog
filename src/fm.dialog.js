@@ -356,7 +356,6 @@ var Dlg = {
         options.isMsg = true;
         options.lock = options.lock === undefined ? false : options.lock;
         options.auto = options.auto === undefined  ? true : options.auto;
-        options.zIndex = options.zIndex || 999;
         fmDialog.show(options);
     },
     loading: function (options) {
@@ -365,7 +364,6 @@ var Dlg = {
         options.content = '<div class="floading"><span class="loading"></span><span class="tips">' + tips + '</span></div>';
         options.isMsg = true;
         options.msgType = options.msgType || 'inverse';
-        options.zIndex = options.zIndex || 999;
         fmDialog.show(options);
     },
     close: function (id) {

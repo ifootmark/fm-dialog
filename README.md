@@ -1,6 +1,6 @@
 # fm-dialog
 
-## 使用方法
+## 引用
 
 * [es6](#es6)
 * [global](#global)
@@ -11,7 +11,6 @@
 import '@/assets/dialog/fm.dialog.min.css'
 import { Dlg } from '@/assets/dialog/fm.dialog.min.js'
 ```
-
 
 ### Global
 
@@ -26,6 +25,12 @@ Dlg.config({
   cssDir: '/dist/fm.dialog.min.css'
 });
 ```
+
+##  Demo
+<a href="http://ifootmark.github.io/fm-dialog/demo.html" target="_blank">http://ifootmark.github.io/fm-dialog/demo.html</a>
+
+## 使用方法
+
 ### 参数选项
 
 | 名称  |  类型 | 默认值  | 说明  |
@@ -56,7 +61,7 @@ Dlg.config({
 
 ### API
 
-### Dlg.show(options)
+#### Dlg.show(options)
 
 `options`
 - id: "fmdialog",
@@ -104,10 +109,10 @@ Dlg.show({
 
 ### 快速调用
 
-若想快速调用，可以用以下 api 。
+若想快速调用，可以用以下方法。
 
 
-### Dlg.confirm(options)
+#### Dlg.confirm(options)
 
 示例：
 ```javascript
@@ -136,7 +141,7 @@ Dlg.confirm({
 });
 ```
 
-### Dlg.msg(options)
+#### Dlg.msg(options)
 
 `content` 消息内容
 `msgType` 消息类型，default, success, info, error, warning, inverse, muted
@@ -161,7 +166,7 @@ Dlg.msg({
 ```
 
 
-### Dlg.loading(options)
+#### Dlg.loading(options)
 
 示例：
 ```javascript
@@ -179,7 +184,7 @@ setTimeout(function(){
 ```
 
 
-### Dlg.close(id)
+#### Dlg.close(id)
 
 `id` 要关闭的对象 id
 
@@ -188,7 +193,7 @@ setTimeout(function(){
 Dlg.close('iloading');
 ```
 
-### Dlg.config(options)
+#### Dlg.config(options)
 
 `options.cssDir`：css 样式表路径
 
@@ -199,10 +204,8 @@ Dlg.config({
 });
 ```
 
-##  Demo
-<a href="http://ifootmark.github.io/fm-dialog/demo.html" target="_blank">http://ifootmark.github.io/fm-dialog/demo.html</a>
-
 ## License
 [MIT](http://spdx.org/licenses/MIT)
+
 
 © allmeet.net

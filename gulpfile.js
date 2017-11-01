@@ -76,8 +76,8 @@ gulp.task('minifyjs', function() {
     .pipe(gulp.dest(G_PATH.distPath));
 });
 
-//minifyjs
-/*gulp.task('minifyjs', function(cb) {
+//minijs
+/*gulp.task('minijs', function(cb) {
   glob(G_PATH.srcPath + 'fm.dialog.js', {nodir: true}, function(err, files) {
     var b = browserify();
     files.forEach(function(file) {
@@ -92,12 +92,6 @@ gulp.task('minifyjs', function() {
       .pipe(gulp.dest(G_PATH.distPath));
     cb();
   });
-});*/
-
-//copyfile
-/*gulp.task('copyfile', function() {
-  return gulp.src(G_PATH.srcPath + 'fm.config.js')
-    .pipe(gulp.dest(G_PATH.distPath));
 });*/
 
 gulp.task('deploy', function() {
