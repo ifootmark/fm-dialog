@@ -70,7 +70,7 @@ var fmDialog = {
                 } else {
                     contentHtml += '<div class="ffoot" style="display: flex;flex-flow: column nowrap;color: #1A1A1A;font-size: 16px;' + _dlg_opt.footCss + '">';
                 }
-                for (var index in _dlg_opt.button) {
+                for (var index = 0; index < _dlg_opt.button.length; index++) {
                     if (index > _dlg_opt.buttonMaxCount - 1) {
                         break;
                     }
