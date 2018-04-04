@@ -1,33 +1,21 @@
-﻿/*============ animate start ============*/
-@-webkit-keyframes animateIn { 
-  0% { opacity: 0; -webkit-transform: scale3d(0.7,0.7,0.7); transform: scale3d(0.7,0.7,0.7); }
-  100% { opacity: 1; } }
-@keyframes animateIn { 
-  0% { opacity: 0; -webkit-transform: scale3d(0.7,0.7,0.7); transform: scale3d(0.7,0.7,0.7); }
-  100% { opacity: 1; } }
-@-webkit-keyframes animateOut { 
-  0% { opacity: 1; }
-  100% { opacity: 0; -webkit-transform: scale3d(0.7,0.7,0.7); transform: scale3d(0.7,0.7,0.7);} }
-@keyframes animateOut { 
-  0% { opacity: 1; }
-  100% { opacity: 0; -webkit-transform: scale3d(0.7,0.7,0.7); transform: scale3d(0.7,0.7,0.7);} }
-.animateIn { 
-  -webkit-animation: animateIn .5s both; 
-  animation: animateIn .5s both; 
-}
-.animateOut { 
-  -webkit-animation: animateOut .5s both; 
-  animation: animateOut .5s both; }
-
-.iclose { 
+﻿.ipopup { font-size: 14px; }
+.iclose {
+  position:absolute;
+  top: 0;
+  right: 10px;
+  font-size:28px;
+  text-align: center;
+  color:#666;
+  cursor:default;
   -webkit-transition: All 0.8s ease-in-out; 
-  transition: All 0.8s ease-in-out; 
+  transition: All 0.8s ease-in-out;
+  -webkit-transform: rotate(45deg); 
+  transform: rotate(45deg);
 }
-.iclose:hover { 
+.iclose:hover {
   -webkit-transform: rotate(360deg); 
   transform: rotate(360deg);
 }
-/*============ animate end ============*/
 /*============ msg start ============*/
 .msgcomm {
   padding: 16px 12px;
@@ -80,24 +68,37 @@
 }
 .floading .tips {
   display: block;
-  font-size: 14px;
   text-align: center;
   margin-top: 2px;
 }
 @-webkit-keyframes spinner-rotate {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
 }
 @keyframes spinner-rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 /*============ loading end ============*/
+/*============ animate start ============*/
+@-webkit-keyframes animateIn { 
+  0% { opacity: 0; -webkit-transform: scale3d(0.7,0.7,0.7); transform: scale3d(0.7,0.7,0.7); }
+  100% { opacity: 1; } }
+@keyframes animateIn { 
+  0% { opacity: 0; -webkit-transform: scale3d(0.7,0.7,0.7); transform: scale3d(0.7,0.7,0.7); }
+  100% { opacity: 1; } }
+@-webkit-keyframes animateOut { 
+  0% { opacity: 1; }
+  100% { opacity: 0; -webkit-transform: scale3d(0.7,0.7,0.7); transform: scale3d(0.7,0.7,0.7);} }
+@keyframes animateOut { 
+  0% { opacity: 1; }
+  100% { opacity: 0; -webkit-transform: scale3d(0.7,0.7,0.7); transform: scale3d(0.7,0.7,0.7);} }
+.animateIn { 
+  -webkit-animation: animateIn .5s both; 
+  animation: animateIn .5s both; 
+}
+.animateOut { 
+  -webkit-animation: animateOut .5s both; 
+  animation: animateOut .5s both; 
+}
+/*============ animate end ============*/

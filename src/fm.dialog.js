@@ -55,7 +55,7 @@ var fmDialog = {
         var _dlg_opt = fmDialog.options[options.id];
         fmDialog._id = _dlg_opt.id;
   
-        var closeHtml = _dlg_opt.showClose ? '<div class="iclose" style="position:absolute;top:4px;right:8px;color:#8C8C8C;font-size:20px;cursor:pointer;">X</div>' : '';
+        var closeHtml = _dlg_opt.showClose ? '<div class="iclose">+</div>' : '';
         var contentHtml = _dlg_opt.content;
         if (_dlg_opt.template && !_dlg_opt.isMsg) {
             var titleBorder = _dlg_opt.buttonDirection == 'horizontal' ? '' : 'border-bottom: 1px solid #EFEFEF;padding-bottom: 20px;';
